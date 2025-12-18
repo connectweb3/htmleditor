@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI HTML Editor</title>
+    <link rel="stylesheet" href="static/style.css">
+    <!-- Google Fonts for Premium Feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo">Antigravity AI Editor</div>
+        <div>
+            <!-- Optional nav or user profile -->
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- View 1: Upload -->
+        <div id="upload-view">
+            <div class="upload-card">
+                <div class="icon-upload">📁</div>
+                <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #fff;">Upload Portfolio</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6;">
+                    Drag & drop your HTML file here to start editing.<br>
+                    Our AI will identify the key editable sections for you.
+                </p>
+
+                <div class="upload-area">
+                    <p>Drag & Drop your HTML file here</p>
+                    <input type="file" id="file-input" accept=".html,.htm" hidden>
+                </div>
+
+                <button class="btn" onclick="document.getElementById('file-input').click()">Browse Files</button>
+            </div>
+        </div>
+
+        <!-- View 2: Editor -->
+        <div id="editor-view">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <h3 style="font-size: 1.1rem; font-weight: 600;">Editor</h3>
+                </div>
+                <!-- Search Toolbar -->
+                <div class="search-toolbar">
+                    <div class="search-row"
+                        style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+                        <button id="btn-undo" class="btn-sm" title="Undo (Ctrl+Z)" disabled>↶ Undo</button>
+                        <button id="btn-redo" class="btn-sm" title="Redo (Ctrl+Y)" disabled>↷ Redo</button>
+                    </div>
+                    <div class="search-row">
+                        <input type="text" id="search-input" placeholder="Find..." style="flex:1;">
+                        <button id="btn-find" class="btn-sm">Find</button>
+                    </div>
+                    <div class="search-row">
+                        <input type="text" id="replace-input" placeholder="Replace..." style="flex:1;">
+                    </div>
+                    <div class="search-props">
+                        <button id="btn-replace" class="btn-sm">Replace</button>
+                        <button id="btn-replace-all" class="btn-sm">Replace All</button>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <!-- Dynamic Forms Generated Here -->
+                </div>
+            </div>
+            <div class="preview-pane">
+                <iframe id="preview-frame" sandbox="allow-scripts allow-same-origin"></iframe>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+
+</html>
